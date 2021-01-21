@@ -1,0 +1,111 @@
+/* general text formatting */
+
+h1, h2, h3, nav, footer {
+	font-family: Verdana, Arial, sans-serif;
+	color: 	#4682B4;
+}
+body {
+   font-family: "Lucida Sans", Verdana, Arial, sans-serif;
+   font-size: 80%; 
+   background-image: url(images/blue.jpg);
+   background-position: left top;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+#loginForm{
+	width: 40%;
+	margin: 125px auto;
+	border: 5px solid #4682B4;
+	border-radius: 6px;
+	padding: 10px 20px 10px 20px;
+	background-color: white;
+}
+
+#inputsize1, #inputsize2{
+	width:90%;
+	padding: 12px 20px;
+	margin: 8px 0
+}
+
+input[type=submit]{
+	padding: 10px 20px 10px 20px;
+	float:center;
+	background-color: #4682B4;
+	border-radius: 10px;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+input[type=submit]:hover{
+	background-color: #3372A2;
+}
+
+#emailSection p, #passwordSection p{
+	color: red;
+}
+
+#showEmailMessage, #showPasswordMessage, #loginError{
+	color: red;
+}
+
+/*navigation bar formatting*/
+nav{
+	opacity: 0.6;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: white;
+	border-radius: 5px;
+}
+
+li{
+	float: left;
+}
+
+li a{
+	display: block;
+	margin: 0;
+	padding: 8px;
+	text-decoration: none;
+	color: black;
+	font-size: 110%;
+	border-radius: 5px;
+}
+
+li a:hover{
+	background-color: #6495ED;
+}
+
+.rightside{
+	float: right;
+}
+
+/* styles for devices with screen widths of 481px to 1024px */
+@media only screen and (min-width: 481px) and (max-width: 1024px)
+{
+	form{
+		width: 50%;
+		margin: 20px auto;
+		padding: 10px 50px 10px 50px;
+		background-color: white;
+	}
+	
+	.inputsize{
+		width: 90%;
+		margin: 10px auto;
+	}
+	
+	input[type=submit]{
+		width: 100%;
+	}
+}
+
+
+

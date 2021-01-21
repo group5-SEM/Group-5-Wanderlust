@@ -1,0 +1,75 @@
+html, body{
+	font-family: 'Comfortaa', Verdana, Arial, sans-serif;
+	background: rgb(238,174,202);
+	background: linear-gradient(180deg, rgba(238,174,202,1) 0%, rgba(180,206,237,1) 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+	width: 100%;
+}
+
+
+img#logo{
+	width: 80px;
+	height: 50px;
+}
+
+.navbar{
+	padding: .8rem;
+	
+}
+
+.navbar-nav li{
+	padding-right: 20px;
+}
+
+a.nav-link{
+	font-size: 1.1 em !important;
+}
+
+#space1{
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+/*CSS FOOTER*/
+
+footer{
+	background: #292c2f;
+	color: white;
+	padding-top: 4rem;
+	text-align: left;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+footer span{
+	color: #5383d3;
+}
+
+footer p.footer-links a{
+	color: white;
+}
+
+footer .footer-wanderlust{
+	color: #8f9296;
+}
+
+footer p#address {
+    font-size: 20px;
+}
+
+footer p#contact-num {
+    font-size: 20px;
+}
+
+footer p.footer-company-about{
+	font-size: 20px;
+}
+
+/*form*/
+
+form{
+	margin: 5px;
+	padding: 5px;
+}

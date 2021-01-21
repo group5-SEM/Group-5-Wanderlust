@@ -1,0 +1,137 @@
+/* general text formatting */
+
+h1, h2, h3, nav, footer {
+	font-family: Verdana, Arial, sans-serif;
+}
+
+body {
+   font-family: "Lucida Sans", Verdana, Arial, sans-serif; 
+   background-image: url(images/mountain.jpg);
+   background-position: left top;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+#header{
+	text-align: center;
+	letter-spacing: 5px;
+	padding: 0px 10px 10px 10px;
+	margin: 0px 10px 10px 10px;
+}
+
+div{
+	margin: 2px auto;
+	width: 100%;
+}
+
+form #searchbox{
+	width: 50%;
+	margin: 0px 10px 20px 305px;
+	padding: 20px 20px 20px 40px;
+	border-radius: 15px;
+	outline:none;
+	border: 1px solid #71C6FF;
+}
+
+/*image formatting*/
+#image1{
+	width: 300px;
+	height: 300px;
+	margin: 50px 500px 0px 525px	
+}
+
+/*navigation bar formatting*/
+nav{
+	opacity: 0.6;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: white;
+	border-radius: 5px;
+}
+
+li{
+	float: left;
+}
+
+li a{
+	display: block;
+	margin: 0;
+	padding: 8px;
+	text-decoration: none;
+	color: black;
+	font-size: 90%;
+	border-radius: 5px;
+}
+
+.rightside{
+	float: right;
+}
+
+li a:hover{
+	background-color: #6495ED;
+}
+
+#submitbtn{
+	padding: 10px 20px 10px 20px;
+	margin: 0 5px 0 525px;
+	background-color: #4682B4;
+	border-radius: 10px;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+#submitbtn2{
+	padding: 10px 20px 10px 20px;
+	background-color: #4682B4;
+	border-radius: 10px;
+	color: white;
+	border: none;
+}
+
+input[type=button]:hover, #submitbtn:hover{
+	background-color: #3372A2;
+}
+
+
+/* styles for devices with screen widths of 481px to 1024px */
+@media only screen and (min-width: 481px) and (max-width: 1024px)
+{
+	
+	.image{
+		width: 60%;
+	}
+	
+	img{
+		margin: 0;
+	}
+
+	div form{
+		width: 100%;
+		margin: 10px auto;
+	}
+	
+	input[type=submit], #submitbtn {
+		width: 90%;
+		margin: 10px 50px 10px 20px;
+	}
+	
+	form #searchbox{
+		width: 80%;
+		margin: 10px 50px 10px 15px;
+	}
+	
+	.footer-distributed{
+		font:bold 14px sans-serif;
+	
+	}
+
+}
+
+

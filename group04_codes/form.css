@@ -1,0 +1,54 @@
+.header {
+  background-image: url('formBackground3.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+html, body {
+  background-image: url('formBackground3.jpg');
+}
+
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.formContainer {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  transform: translate(-50%, -55%);
+  border: 2px solid white;
+  padding: 20px;
+  border-radius: 2px;
+  color: white;
+  width: 50%;
+}
+
+.formContainer h1 {
+  text-align: center;
+  font-family: "Comfortaa";
+  color: white;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	color: white;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px 20px 5px 20px;
+}
+
+button:hover {
+	background-color: black;
+	border-radius: 3px;
+}
