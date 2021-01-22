@@ -116,7 +116,7 @@ function viewImage5($package){
 
 function searchPackageImage($search){
 	$pdo=setConnectionInfo(array(DBCONNECTION,DBUSER,DBPASS));
-	$sql="SELECT PackageImage FROM package WHERE Name LIKE '%".$search."%' AND RequestStatus= 'apprv' ORDER BY Name"; //where admin approve
+	$sql="SELECT PackageImage FROM package WHERE Name LIKE '%".$search."%' OR Location LIKE '%".$search."%' AND RequestStatus= 'apprv' ORDER BY Name"; //where admin approve
 	$blob= $pdo->query($sql);
 	foreach ($image=$blob->fetchAll(PDO::FETCH_COLUMN) as $row) {
 		//echo '<img src="data:image/jpeg;base64,'.base64_encode( $row ).'"/><br>';
