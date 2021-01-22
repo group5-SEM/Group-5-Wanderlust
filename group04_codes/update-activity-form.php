@@ -53,30 +53,41 @@ $result = mysqli_query($con, $sql);
 			<div class="card-header">
 				<h3 class="mb-0">Update Activity</h3>
 			</div>
-			
+	
 			
 			<div class="card-body">
 			<?php while($row=mysqli_fetch_array($result)) {?>
 				<form method="post" action="update-activity-process.php" enctype='multipart/form-data' name="uform" id="update-activity-form" class="form" role="form" >
 					<fieldset>
-						<label for="name" class="mb-0">Activity Name</label>
+						<label for="name" class="mb-0">Name</label>
 						<div class="row mb-1">
 							<div class="col-lg-12">
-								<input type="text" name="name" id="activityName" class="form-control required-input" value="<?php echo $row['ActivityName']?> ">
+								<input type="text" name="name" id="activityName" class="form-control required-input" value="<?php echo $row['ActivityName']?> " required>
 							</div>
 						</div>
 							
-						<label for="description" class="mb-0">Activity Description</label>
+						<label for="description" class="mb-0">Description</label>
 							<div class="row mb-1">
 								<div class="col-lg-12">
-									<textarea rows="6" name="description" id="description" class="form-control"> <?php echo $row['ActivityDescription']; ?> </textarea>
+									<textarea rows="6" name="description" id="description" class="form-control" required> <?php echo $row['ActivityDescription']; ?> </textarea>
 								</div>
 							</div>
 							
 						<label for="price" class="mb-0">Price</label>
 						<div class="row mb-1">
+							<div class="col-lg-12"><?php $price= $row['ActivityPrice']?> 
+								<input type="number" name="price" id="price" class="form-control" value="<?php echo $price ?>" required>
+							</div>
+						</div>
+						
+						<label for="image" class="mb-0">Image</label>
+						<div class="row mb-1">
 							<div class="col-lg-12">
-								<input type="text" name="price" id="price" class="form-control required-input" value="<?php echo $row['ActivityPrice']?> ">
+								<?php 	echo '<center><span class=displayimgs>';
+										echo '<img src="data:image/jpeg;base64,'.base64_encode($row['ActivityImage']).'"/>';
+										echo '</span></center>';
+								?>
+								<input type="file" name="image" class="form-control" id="image">
 							</div>
 						</div>
 							
