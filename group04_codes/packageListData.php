@@ -126,7 +126,7 @@ function searchPackageImage($search){
 
 function searchPackageName($search){
 	$pdo=setConnectionInfo(array(DBCONNECTION,DBUSER,DBPASS));
-	$sql="SELECT Name FROM package WHERE Name LIKE '%".$search."%' AND RequestStatus= 'apprv' ORDER BY Name"; //where admin approve	
+	$sql="SELECT Name FROM package WHERE Name LIKE '%".$search."%' OR Location LIKE '%".$search."%' AND RequestStatus= 'apprv' ORDER BY Name"; //where admin approve	
 	$blob= $pdo->query($sql);
 	foreach ($result=$blob->fetchAll(PDO::FETCH_COLUMN) as $row) {
 	
