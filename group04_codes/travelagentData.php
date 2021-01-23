@@ -21,7 +21,7 @@ function setConnectionInfo($value=array()){
 function viewTravelAgentInfo($email){
 	$_POST['email']=$email;
 	$pdo=setConnectionInfo(array(DBCONNECTION,DBUSER,DBPASS));
-	$sql="SELECT Name, ContactNum, Address FROM travelagent WHERE Email='$_POST[email]'";
+	$sql="SELECT Name, ContactNum, Address, Email FROM travelagent WHERE Email='$_POST[email]'";
 	$statement=$pdo->prepare($sql);
 	$statement->execute();
 	return $statement;

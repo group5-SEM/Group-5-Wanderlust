@@ -80,7 +80,7 @@ foreach($agentPic as $image){
 			<br>
 			<p><label>No. Tel: </label><?php echo $info[1]; ?></p>
 			<br>
-			<p class="editdelete"><a href="update-travel-agent-profile.php?&email=<?php echo $_GET['Email'];?>">Edit</a></p>
+			<p class="editdelete"><a href="update-travel-agent-profile.php?email=<?php echo $info[3]; ?>">Edit</a></p>
 		</td>
 		<td class="packagelist">
 			<p><label class="packagelisttitle">Package List</label></p>
