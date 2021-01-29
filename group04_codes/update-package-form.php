@@ -77,7 +77,7 @@ $result = mysqli_query($con, $sql) or die( mysqli_error($con));;
 							<label for="price" class="mb-0">Price</label>
 							<div class="row mb-1">
 								<div class="col-lg-12">
-									<input type="text" name="price" id="price" class="form-control required-input" value="<?php echo $row['Price']?>">
+									<input type="number" min="1" name="price" id="price" class="form-control required-input" value="<?php echo $row['Price']?>">
 								</div>
 							</div>
 							

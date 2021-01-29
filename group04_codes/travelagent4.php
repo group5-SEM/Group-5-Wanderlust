@@ -15,7 +15,7 @@ while($res_id2 = mysqli_fetch_array($res_id)) {
 }
 
 
-$sql = "SELECT package.Id, package.Name, package.Location, package.PackageDescription, package.Price, package.Image1, package.Image2, package.Image3, package.Image4, package.Image5, travelagent.Email from package, travelagent where package.TravelAgentId = travelagent.TravelAgentId AND travelagent.TravelAgentId = $travelagentid";
+$sql = "SELECT package.Id, package.Name, package.Location, package.PackageDescription, package.Price, package.Image1, package.Image2, package.Image3, package.Image4, package.Image5, package.RequestStatus, travelagent.Email from package, travelagent where package.TravelAgentId = travelagent.TravelAgentId AND travelagent.TravelAgentId = $travelagentid";
 
 //execute the query
 $records = mysqli_query($con, $sql);
@@ -80,7 +80,7 @@ foreach($agentPic as $image){
 			<br>
 			<p><label>No. Tel: </label><?php echo $info[1]; ?></p>
 			<br>
-			<p class="editdelete"><a href="#">Edit</a></p>
+			<p class="editdelete"><a href="update-travel-agent-profile.php?email=<?php echo $info[3]; ?>">Edit</a></p>
 		</td>
 		<td class="packagelist">
 			<p><label class="packagelisttitle">Package List</label></p>
@@ -92,7 +92,16 @@ foreach($agentPic as $image){
 				<section class="package" >
 					<p><label class="packagetitle"><?php echo $row['Name']; ?></label>
 					<p><?php echo $row['Location']; ?> <br>
-					RM<?php echo $row['Price']; ?> <br></p>
+					RM<?php echo $row['Price']; ?> <br>
+					Package Status: <?php
+										$status = $row['RequestStatus'];
+
+										if ($status == "apprv") {
+										  echo "Approved";
+										} else {
+										  echo "In request";
+										}
+									?></p>
 					<p><input type="hidden" name="idpack" value="<?php echo $row['Id']?> "/></p>
 					<p><input type="hidden" name="travelagentid" value="<?php echo $row['TravelAgentId']?> "/></p>
 					<p><input type="hidden" name="email" value="<?php echo $row['Email']?> "/></p>
