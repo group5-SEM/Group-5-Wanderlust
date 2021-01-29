@@ -38,7 +38,7 @@ function listPackages(){
 
 function displaySelectedPackage($ID){
 	$pdo=setConnectionInfo(array(DBCONNECTION, DBUSER, DBPASS));
-	$sql="SELECT Id, Name, Location, Price, PackageDescription, RequestStatus, Travelagentid FROM package WHERE Id = '$ID'";
+	$sql="SELECT Id, Name, Location, Price, PackageDescription, PackageImage, RequestStatus, Travelagentid FROM package WHERE Id = '$ID'";
 	$statement=$pdo->query($sql);
 	return $statement;
 }

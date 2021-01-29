@@ -29,6 +29,10 @@
 						echo "<p> Location: ".$details['Location']."</p><br>";
 						echo "<p> Package Price: RM".$details['Price']."</p><br>";
 						echo "<p> Package Description: ".$details['PackageDescription']."</p><br>";
+						echo "<p> Package Cover Image: </p><br>";
+						echo '<span class=displayimgs>';
+						echo '<img src="data:image/jpeg;base64,'.base64_encode($details['PackageImage']).'"/>';
+						echo '</span>';
 						echo "<p> Images: </p><br>";
 						for ($i=1; $i<6; $i++){
 						$image = selectedPackageImg($id,$i);
