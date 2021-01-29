@@ -26,6 +26,24 @@ function readDate($customerID){
 	return $statement;
 }
 
+function readTime($customerID){
+	$pdo=setConnectionInfo(array(DBCONNECTION,DBUSER,DBPASS));
+	$sql='SELECT DISTINCT(ActivityTime) FROM customerActivity 
+	WHERE customeractivity.Id = ? ORDER BY ActivityTime ASC';
+	$statement=$pdo->prepare($sql);
+	$statement->execute([$customerID]);
+	return $statement;
+}
+
+function readExistingActivity($customerID){
+	$pdo=setConnectionInfo(array(DBCONNECTION,DBUSER,DBPASS));
+	$sql='SELECT DISTINCT(ActivityId) FROM customerActivity 
+	WHERE customeractivity.Id = ?';
+	$statement=$pdo->prepare($sql);
+	$statement->execute([$customerID]);
+	return $statement;
+}
+
 function readCustomerActivity($customerID, $date){ //by sppecific customers and specific date
 	$pdo=setConnectionInfo(array(DBCONNECTION,DBUSER,DBPASS));
 	$sql='SELECT ActivityTime, ActivityName, ActivityPrice, ActivityImage, CustomerActivityId

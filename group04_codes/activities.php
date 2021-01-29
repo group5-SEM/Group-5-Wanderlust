@@ -3,7 +3,33 @@
 include 'includes/database.inc.php';
 include 'includes/connection.php';
 
+$email=$_GET['email'];
+$customerId=readCustomerId($email);
+foreach($customerId as $cust){
+	$customerID = $cust[0];
+}
+
 $activities=readActivities();
+
+$date=readDate($customerID);
+$dateArray = array();
+foreach($date as $d){
+	array_push($dateArray, $d[0]);
+}
+
+$time=readTime($customerID);
+$timeArray = array();
+foreach($time as $t){
+	array_push($timeArray, $t[0]);
+}
+
+$activity=readExistingActivity($customerID);
+$activityArray = array();
+foreach($activity as $a){
+	array_push($activityArray, $a[0]);
+}
+
+
 ?>
 
 
@@ -24,6 +50,20 @@ $activities=readActivities();
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="checkDate.js"></script>
+	<script type="text/javascript">
+		function addActivity(id)
+		{
+			var activity = <?php echo json_encode($activityArray); ?>;
+			var chosenActivity = id
+			
+			for(var j=0; j<activity.length; j++){
+				if(chosenActivity == activity[j]){
+					alert("This activity is already in your timeline");
+					event.preventDefault();
+				}
+			}	
+		}
+	</script>
 	<style>
 		<?php include 'plan.css'; ?>
    </style>
@@ -70,7 +110,6 @@ $activities=readActivities();
 		<?php
 		foreach($activities as $act){
 		?>
-		
 			<div class="col-md-3">
 				<div class="card">	
 					<p class="articleImg">
@@ -92,7 +131,8 @@ $activities=readActivities();
 						<input type="time" name="time" class="timefield" required />
 						<input type="hidden" name="email" value="<?php echo $_GET['email']?>" />
 						<input type="hidden" name="actId" value="<?php echo $act[0];?>" />
-						<button type="submit" id="button3" onclick="checkDate(event)">Add To My Timeline</button>
+						<label value="">Add To My Timeline</label>
+						<input type="submit" onclick="checkDate(event); addActivity(<?php echo $act[0];?>);"></input>
 					</div>
 					</fieldset>
 					</form>
